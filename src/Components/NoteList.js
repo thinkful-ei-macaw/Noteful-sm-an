@@ -2,7 +2,7 @@ import React from 'react';
 import Note from './Note'
 import SelectedNote from './SelectedNote';
 import DataContext from '../DataContext';
-
+import AddNote from './AddNote';
 import api from '../api';
 
 class NoteList extends React.Component {
@@ -49,13 +49,20 @@ class NoteList extends React.Component {
 
     return (
       <ul>
+        
+
+
         {noteComponents}
         {this.props.view !== "note" ? (
-          <li className="add"><button onClick={() => this.context.addClick('note')}>Add Note</button></li>
+          <li className="add"><button onClick={() => this.context.addNoteFn()}>Add Note</button></li>
         ) : (
           <SelectedNote content={noteContent} />
         )}
+        {
+          this.context.data.addNote && <AddNote />
+        }
       </ul>
+
         
     )
   }

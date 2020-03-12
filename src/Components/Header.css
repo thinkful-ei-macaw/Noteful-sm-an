@@ -8,7 +8,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: white;
+  background: rgb(48, 78, 122);
   box-shadow: 0 .2rem 1rem rgba(0,0,0,0.1)
 }
 
@@ -19,6 +19,6 @@ header h1 {
 }
 
 header a {
-  color: #8881D8;
+  color: gainsboro;
   text-decoration: none;
 }

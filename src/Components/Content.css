@@ -15,7 +15,7 @@
 }
 
 .content li {
-  background: white;
+  background: rgb(84, 112, 155);
   width: calc((100% - 6rem) / 4);
   padding: 1rem;
   margin-right: 2rem;
@@ -34,7 +34,7 @@
 
 .content li a {
   text-decoration: none;
-  color: #8881D8;
+  color: gainsboro;
 }
 
 .content li a:hover {
@@ -48,7 +48,7 @@
 }
 
 .content li button {
-  background: #8881D8;
+  background: rgb(54, 56, 82);
   border: none;
   padding: .8rem 1rem;
   color: white;
@@ -61,7 +61,7 @@
 }
 
 .content li button:hover {
-  background: rgb(114, 108, 180);
+  background: rgb(48, 78, 122);
 }
 
 .content li.add {
@@ -69,7 +69,7 @@
   align-items: center;
   justify-content: center;
   background: none;
-  border: 1px dashed #8881D8;
+  border: 1px dashed rgb(54, 56, 82);
   box-shadow: none;
   transition: all .2s ease;
 }
@@ -80,8 +80,22 @@
 
 .content li.add button {
   background: none;
-  color: #8881D8;
+  color: rgb(54, 56, 82);
   font-size: 1rem;
   height: 100%;
   width: 100%;
+}
+
+.content::-webkit-scrollbar{
+  background-color: rgb(175, 180, 245);
+
+}
+
+#form-input {
+  margin-left: 2rem;
+  width: 75%;
+}
+
+#folder-label {
+margin-left: 2rem; 
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class SelectedNote extends React.Component {
   render() {
@@ -7,5 +8,7 @@ class SelectedNote extends React.Component {
     )
   }
 }
-
+SelectedNote.propTypes = {
+  value: PropTypes.string
+}
 export default SelectedNote;

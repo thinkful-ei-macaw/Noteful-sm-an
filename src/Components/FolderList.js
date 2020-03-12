@@ -1,12 +1,27 @@
 import React from 'react';
 import Folder from './Folder';
 import DataContext from '../DataContext';
+import api from '../api';
+
+
 
 class FolderList extends React.Component {
   static contextType = DataContext;
 
-  render() {
 
+  addF = (e) => {
+    let fName = e.target['folder-name'].value
+    const folder = {
+      name: fName
+    }
+    api.addFolder(folder)
+      .then(() =>{
+        this.context.submitFolder()
+      })
+  }
+
+
+  render() {
     const id = this.props.match.params.id || null;
 
     const folders = this.context.data.folders.map(folder => (
@@ -16,7 +31,23 @@ class FolderList extends React.Component {
     return (
       <ul>
         {folders}
-        <li><button onClick={() => this.context.addClick('folder')}>Add Folder</button></li>
+        <li><button onClick={() => this.context.addFolderFn()}>Add Folder</button></li>
+        {this.context.data.addFolder && 
+          <form id="add-folder" name="add-folder" 
+            onSubmit={(e) => {
+            e.preventDefault()
+            this.addF(e)}
+            }>
+            <label htmlFor="folder-name" id="folder-label">Folder name:</label>
+            <input type="text" name="folder-name" id='form-input'/>
+            <button type="submit">
+              Add
+            </button>
+            <button onClick={() => this.context.cancelAdd()}>
+              Cancel
+            </button>
+          </form>
+        }
       </ul>
     )
   }

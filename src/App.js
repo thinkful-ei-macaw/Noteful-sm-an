@@ -3,7 +3,7 @@ import './App.css';
 import Sidebar from './Components/Sidebar';
 import Content from './Components/Content';
 import Header from './Components/Header';
-import Overlay from './Components/Overlay';
+//import Overlay from './Components/Overlay';
 
 import api from './api';
 
@@ -87,7 +87,7 @@ class App extends React.Component {
             <Sidebar />
             <Content />
           </main>
-          { this.state.dialogOpen ? (<Overlay />) : '' }
+          {/* { this.state.dialogOpen ? (<Overlay />) : '' } */}
         </div>
       </DataContext.Provider>
     );

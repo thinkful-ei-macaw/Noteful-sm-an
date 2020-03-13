@@ -10,6 +10,14 @@ class FolderList extends React.Component {
 
 
   addF = (e) => {
+    let trimmed = e.target['folder-name'].value.trim() === ""
+
+    if(trimmed){
+      alert('please enter a name')
+    }
+    
+    else{
+
     let fName = e.target['folder-name'].value
     const folder = {
       name: fName
@@ -18,6 +26,7 @@ class FolderList extends React.Component {
       .then(() =>{
         this.context.submitFolder()
       })
+    }
   }
 
 
@@ -39,7 +48,7 @@ class FolderList extends React.Component {
             this.addF(e)}
             }>
             <label htmlFor="folder-name" id="folder-label">Folder name:</label>
-            <input type="text" name="folder-name" id='form-input'/>
+            <input type="text" name="folder-name" id='form-input' required />
             <button type="submit">
               Add
             </button>
